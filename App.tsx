@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { ScreenOrientation } from 'expo';
-import {Button} from 'native-base';
+import { Container, Header, Content, List, ListItem, Button, Left, Body, Right, Title, Icon } from 'native-base';
 
 /**
  * Allow ALL Screen Orientations
@@ -16,10 +16,38 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.helloText}>Witaj w Appce <Text style={styles.helloTextRed}>Recallnote! ♥</Text></Text>
-        <Button rounded block danger style={styles.baseButton}><Text style={styles.baseButtonText}>Add Note</Text></Button>
-      </View>
+      <Container style={styles.container}>
+
+        <Header>
+          <Left/>
+          <Body>
+            <Title>Witaj w Recallnote! <Text style={styles.helloTextRed}>♥</Text></Title>
+          </Body>
+          <Right />
+        </Header>
+
+        <Content>
+        
+          <List>
+            <ListItem>
+              <Text>Task 1</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Task 2</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Task 3</Text>
+            </ListItem>
+          </List>
+
+          <Button rounded block style={styles.baseButton}>
+            <Text style={styles.baseButtonText}>
+              <Icon name='add' style={{ fontSize: 40 }} />
+            </Text>
+          </Button>
+
+        </Content>
+      </Container>
     );
   }
 }
@@ -33,9 +61,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     justifyContent: 'center',
   },
-  helloText: {
-    fontSize: 50,
-  },
   helloTextRed: {
     color: 'red',
   },
@@ -43,6 +68,9 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   baseButton: {
-    maxWidth: 100,
+    width: 50,
+    height: 50,
+    fontSize: 100,
+    backgroundColor: '#00c853',
   },
 });
