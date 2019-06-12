@@ -1,10 +1,9 @@
 import React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text } from 'react-native';
 import { NativeRouter, Route, Link } from 'react-router-native';
-import { Header, Left, Body, Title, Right } from 'native-base';
-import FirstView from './views/First';
-import SecondView from './views/Second';
-import DefaultView from './views/Default';
+import FirstView from './screens/FirstScreen';
+import SecondView from './screens/SecondScreen';
+import DefaultView from './screens/DefaultScreen';
 import initializeApp from './init';
 
 /**
@@ -20,14 +19,7 @@ export default class App extends React.Component {
   render () {
     return (
       <NativeRouter>
-
-        <Header>
-          <Left/>
-            <Body>
-              <Title>Witaj w Recallnote! <Text style={styles.helloTextRed}>♥</Text></Title>
-            </Body>
-          <Right />
-        </Header>
+        <Text> </Text>
 
         <Link to="/first">
           <Text>Go to first view</Text>
@@ -48,17 +40,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-/**
- * Styles for the Main Component
- */
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-  },
-  helloTextRed: {
-    color: 'red',
-  },
-});

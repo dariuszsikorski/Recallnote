@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
-import { Container, Content, List, ListItem, Button, Icon } from 'native-base';
+import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, List, ListItem } from 'native-base';
 
 /**
  * Render the component
@@ -8,10 +8,20 @@ import { Container, Content, List, ListItem, Button, Icon } from 'native-base';
 export default class First extends React.Component {
   render () {
     return (
-      <Container style={styles.container}>
+      <Container>
+        <Header>
+          <Left>
+            <Button transparent>
+              <Icon name='menu' />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Witaj w Recallnote! <Text style={styles.helloTextRed}>♥</Text></Title>
+          </Body>
+          <Right />
+        </Header>
 
         <Content>
-        
           <List>
             <ListItem>
               <Text>Task 1</Text>
@@ -29,8 +39,15 @@ export default class First extends React.Component {
               <Icon name='add' style={{ fontSize: 40 }} />
             </Text>
           </Button>
-
         </Content>
+
+        <Footer>
+          <FooterTab>
+            <Button full>
+              <Text>Footer</Text>
+            </Button>
+          </FooterTab>
+        </Footer>
       </Container>
     );
   }
@@ -40,11 +57,6 @@ export default class First extends React.Component {
  * Styles for the Root Component
  */
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-  },
   baseButtonText: {
     color: '#fff',
   },
@@ -53,5 +65,8 @@ const styles = StyleSheet.create({
     height: 50,
     fontSize: 100,
     backgroundColor: '#00c853',
+  },
+  helloTextRed: {
+    color: 'red',
   },
 });
